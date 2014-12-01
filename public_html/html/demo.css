@@ -1,0 +1,19 @@
+/* Немножко стилей для всплывающих сообщений */
+
+.notice {
+    display:       block;
+    border-radius: 10px;
+    padding:       7px;
+    background:    #DDD;
+    border:        1px solid #EEE;
+    }
+
+.notice-success {
+    color:        green;
+    border-color: green;
+    }
+
+.notice-error {
+    color:        red;
+    border-color: red;
+    }
