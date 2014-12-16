@@ -13,7 +13,7 @@ class Dummy extends Form
     $this->addInput('name', 'Имя')
       ->setIsRequired();
 
-    $this->addSelect('gender', array('m' => 'Мужской', 'f' => 'Женский'), 'Пол')
+    $this->addSelect('gender', 'Пол', array('m' => 'Мужской', 'f' => 'Женский'))
       ->setPlaceholder('Выберите');
 
     $this->addInput('age', 'Возраст')

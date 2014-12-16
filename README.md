@@ -41,7 +41,8 @@ class MyForm extends Form
     $this->addInput('name', 'Имя')
       ->addFilter('!^[a-z]+$!i');
     $this->addCheckbox('is_active', 'Вкл');
-    $this->addSelect('status', array('new' => 'Новый', 'old' => 'Старый'), 'Статус');
+    $this->addSelect('status', 'Статус')
+      ->setOptions(array('new' => 'Новый', 'old' => 'Старый'));
     $this->addFile('image', 'Изображение')
       ->setIsRequired();
   }
