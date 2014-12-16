@@ -20,4 +20,13 @@ class Controller extends \SQRT\Controller
     $engine->loadExtension(new Notice($this->getSession()->getFlashBag()));
     $engine->loadExtension(new URL($this->getUrl()));
   }
+
+  /** Отрисовка формы */
+  public function renderForm(Form $form, $submit = null, $submit_attr = null, $form_action = null)
+  {
+    return $this->render(
+      'form/form',
+      array('form' => $form, 'submit' => $submit, 'submit_attr' => $submit_attr, 'form_action' => $form_action)
+    );
+  }
 }

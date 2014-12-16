@@ -11,7 +11,7 @@ require_once __DIR__ . '/config.php';
 
 /** Вывод ошибок */
 if (DEVMODE) {
-  error_reporting(E_ALL); // E_ALL ^ E_STRICT ^ E_DEPRECATED
+  error_reporting(E_ALL ^ E_STRICT); // E_ALL ^ E_STRICT ^ E_DEPRECATED
   ini_set('display_errors', true);
 } else {
   ini_set('display_errors', false);

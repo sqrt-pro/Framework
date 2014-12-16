@@ -17,3 +17,30 @@
     color:        red;
     border-color: red;
     }
+
+#form-dummy div {
+    display: block;
+    margin:  10px 0;
+    font:    14px/1 "Georgia";
+    }
+
+#form-dummy div span {
+    display: inline-block;
+    width:   130px;
+    }
+
+#form-dummy button {
+    border:        1px solid silver;
+    background:    #FEFEFE;
+    border-radius: 5px;
+    padding:       5px 20px;
+    font:          14px/1 "Georgia";
+    }
+
+#form-dummy input, #form-dummy select {
+    font:          14px/1 "Georgia";
+    padding:       5px;
+    border:        1px solid silver;
+    background:    #FEFEFE;
+    border-radius: 5px;
+    }

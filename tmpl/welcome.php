@@ -11,3 +11,5 @@
 <h3>Текущий URL: <?= $this->url()->asString(true) ?></h3>
 
 <p>Добавить сообщение: <a href="/notice/success:true/">Успех</a> | <a href="/notice/">Ошибка</a>.</p>
+
+<p><a href="/form/">Пример работы формы</a></p>

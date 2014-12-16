@@ -33,20 +33,20 @@ IDE сама подсказывает доступные опции и шанс 
 
 **Пример настройки формы:**
 
-    class MyForm extends Form
-    {
-      function init() {
-        $this
-          ->addInput('name', 'Имя')
-          ->setIsRequired(true);
-        $this
-          ->addSelect('city')
-          ->setOptions('Москва', 'Киев', 'Минск')
-        $this
-          ->addInput('email', 'E-mail')
-          ->setRegexp('/[some_regexp]/uis');
-      }
-    }
+~~~ php
+class MyForm extends Form
+{
+  function init() 
+  {
+    $this->addInput('name', 'Имя')
+      ->addFilter('!^[a-z]+$!i');
+    $this->addCheckbox('is_active', 'Вкл');
+    $this->addSelect('status', array('new' => 'Новый', 'old' => 'Старый'), 'Статус');
+    $this->addFile('image', 'Изображение')
+      ->setIsRequired();
+  }
+}
+~~~
 
 ### 3. Максимум подсказок в IDE (PHPStorm).
 В SQRT Framework если где-либо можно получить объект, по нему с большой вероятностью будет доступен автокомплит, т.к. 

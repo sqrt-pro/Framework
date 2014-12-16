@@ -11,6 +11,22 @@ class defaultController extends Controller
     return $this->render('welcome', array('name' => 'Мир'));
   }
 
+  /** Пример страницы с формой */
+  function formAction()
+  {
+    $f = new \Form\Dummy($this->getRequest(), 'dummy');
+
+    if ($f->validate()) {
+      $this->notice('Успешно сохранено', true);
+    }
+
+    if ($err = $f->getErrors('<br />')) {
+      $this->notice($err, false);
+    }
+
+    return $this->renderForm($f, 'Сохранить');
+  }
+
   /** Добавляем всплывающее сообщение */
   function noticeAction()
   {
