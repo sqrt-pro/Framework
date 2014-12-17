@@ -29,4 +29,14 @@ class Controller extends \SQRT\Controller
       array('form' => $form, 'submit' => $submit, 'submit_attr' => $submit_attr, 'form_action' => $form_action)
     );
   }
+
+  /**
+   * {@inheritdoc}
+   *
+   * @return Layout
+   */
+  public function layout($template = null)
+  {
+    return new Layout($this->getTemplatesEngine(), $template);
+  }
 }

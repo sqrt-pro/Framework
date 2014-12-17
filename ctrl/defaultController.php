@@ -8,7 +8,13 @@ class defaultController extends Controller
   /** Главная страница */
   function indexAction()
   {
-    return $this->render('welcome', array('name' => 'Мир'));
+    return $this->layout()
+      ->setTitle('SQRT Framework')
+      ->setHeader('Главная страница')
+      ->setKeywords('META-ключевые слова')
+      ->setDescription('META-описание страницы')
+      ->setContent($this->render('welcome', array('name' => 'Мир')))
+      ->render();
   }
 
   /** Пример страницы с формой */
@@ -24,7 +30,10 @@ class defaultController extends Controller
       $this->notice($err, false);
     }
 
-    return $this->renderForm($f, 'Сохранить');
+    return $this->layout()
+      ->setTitle('Пример работы формы')
+      ->setContent($this->renderForm($f, 'Сохранить'))
+      ->render();
   }
 
   /** Добавляем всплывающее сообщение */
