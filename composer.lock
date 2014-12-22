@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ec261c798611b97ca9b8a1c1748e04bc",
+    "hash": "e69e64ff3e5f5752b76a075301cd5b7b",
     "packages": [
         {
             "name": "danielstjules/stringy",
@@ -154,23 +154,82 @@
             "time": "2014-01-18 15:33:09"
         },
         {
+            "name": "robmorgan/phinx",
+            "version": "v0.3.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/robmorgan/phinx.git",
+                "reference": "589319c8bd7f819580bbab11a8987fb38853bfe7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/robmorgan/phinx/zipball/589319c8bd7f819580bbab11a8987fb38853bfe7",
+                "reference": "589319c8bd7f819580bbab11a8987fb38853bfe7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/class-loader": "2.*",
+                "symfony/config": "2.*",
+                "symfony/console": "2.*",
+                "symfony/yaml": "2.*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "squizlabs/php_codesniffer": "dev-phpcs-fixer"
+            },
+            "bin": [
+                "bin/phinx"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Phinx": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rob Morgan",
+                    "email": "robbym@gmail.com",
+                    "homepage": "http://robmorgan.id.au",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "Phinx makes it ridiculously easy to manage the database migrations for your PHP app.",
+            "homepage": "http://phinx.org",
+            "keywords": [
+                "database",
+                "database migrations",
+                "db",
+                "migrations",
+                "phinx"
+            ],
+            "time": "2014-10-06 09:27:17"
+        },
+        {
             "name": "sqrt-pro/db",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sqrt-pro/DB.git",
-                "reference": "33ab8bdd7da242648d64524641c5cb67ea49bb9c"
+                "reference": "8b788fcd09b2e84021f581f4019da7087d99fe7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sqrt-pro/DB/zipball/33ab8bdd7da242648d64524641c5cb67ea49bb9c",
-                "reference": "33ab8bdd7da242648d64524641c5cb67ea49bb9c",
+                "url": "https://api.github.com/repos/sqrt-pro/DB/zipball/8b788fcd09b2e84021f581f4019da7087d99fe7f",
+                "reference": "8b788fcd09b2e84021f581f4019da7087d99fe7f",
                 "shasum": ""
             },
             "require": {
                 "danielstjules/stringy": "dev-master",
                 "php": ">=5.3.0",
+                "robmorgan/phinx": "*",
                 "sqrt-pro/exception": "dev-master",
+                "sqrt-pro/helpers": "dev-master",
                 "sqrt-pro/query-builder": "dev-master"
             },
             "type": "library",
@@ -185,7 +244,7 @@
             ],
             "description": "SQRT.pro DB is part of SQRT Framework",
             "homepage": "http://fw.sqrt.pro",
-            "time": "2014-12-01 04:11:41"
+            "time": "2014-12-22 10:00:33"
         },
         {
             "name": "sqrt-pro/exception",
@@ -323,12 +382,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sqrt-pro/QueryBuilder.git",
-                "reference": "4da3f9c40f7321f1c34e479788520dde7be81f0e"
+                "reference": "cf433d32cc6c04821827f49dfd4eb3be790d9509"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sqrt-pro/QueryBuilder/zipball/4da3f9c40f7321f1c34e479788520dde7be81f0e",
-                "reference": "4da3f9c40f7321f1c34e479788520dde7be81f0e",
+                "url": "https://api.github.com/repos/sqrt-pro/QueryBuilder/zipball/cf433d32cc6c04821827f49dfd4eb3be790d9509",
+                "reference": "cf433d32cc6c04821827f49dfd4eb3be790d9509",
                 "shasum": ""
             },
             "require": {
@@ -346,7 +405,7 @@
             ],
             "description": "SQL Query Builder is a part of SQRT Framework",
             "homepage": "http://fw.sqrt.pro",
-            "time": "2014-10-11 09:30:29"
+            "time": "2014-12-18 15:38:35"
         },
         {
             "name": "sqrt-pro/tag",
@@ -414,18 +473,116 @@
             "time": "2014-12-02 03:43:48"
         },
         {
+            "name": "symfony/class-loader",
+            "version": "2.6.x-dev",
+            "target-dir": "Symfony/Component/ClassLoader",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/ClassLoader.git",
+                "reference": "53634806fb9815d4dfcbaf46052e15dc0ffcc5df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/ClassLoader/zipball/53634806fb9815d4dfcbaf46052e15dc0ffcc5df",
+                "reference": "53634806fb9815d4dfcbaf46052e15dc0ffcc5df",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "symfony/finder": "~2.0,>=2.0.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\ClassLoader\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Symfony ClassLoader Component",
+            "homepage": "http://symfony.com",
+            "time": "2014-12-20 16:02:27"
+        },
+        {
+            "name": "symfony/config",
+            "version": "2.7.x-dev",
+            "target-dir": "Symfony/Component/Config",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Config.git",
+                "reference": "dea5d73603b0533f487b457003a5aa9b09606c22"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Config/zipball/dea5d73603b0533f487b457003a5aa9b09606c22",
+                "reference": "dea5d73603b0533f487b457003a5aa9b09606c22",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/filesystem": "~2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Config\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Symfony Config Component",
+            "homepage": "http://symfony.com",
+            "time": "2014-12-20 16:07:09"
+        },
+        {
             "name": "symfony/console",
-            "version": "dev-master",
+            "version": "2.6.x-dev",
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "6960be483ad86c7fd31de8f569d479379051a734"
+                "reference": "4240553bedec413ac2453fdb4cd4c3095809e821"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/6960be483ad86c7fd31de8f569d479379051a734",
-                "reference": "6960be483ad86c7fd31de8f569d479379051a734",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/4240553bedec413ac2453fdb4cd4c3095809e821",
+                "reference": "4240553bedec413ac2453fdb4cd4c3095809e821",
                 "shasum": ""
             },
             "require": {
@@ -444,7 +601,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "2.6-dev"
                 }
             },
             "autoload": {
@@ -468,7 +625,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-12-12 16:24:25"
+            "time": "2014-12-20 16:02:27"
         },
         {
             "name": "symfony/debug",
@@ -477,12 +634,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Debug.git",
-                "reference": "77d85b05ddc158884ac7395aeb6ca886a27b19b2"
+                "reference": "39f7b9d9e938906b28b285b6a90bf30722ab5d60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Debug/zipball/77d85b05ddc158884ac7395aeb6ca886a27b19b2",
-                "reference": "77d85b05ddc158884ac7395aeb6ca886a27b19b2",
+                "url": "https://api.github.com/repos/symfony/Debug/zipball/39f7b9d9e938906b28b285b6a90bf30722ab5d60",
+                "reference": "39f7b9d9e938906b28b285b6a90bf30722ab5d60",
                 "shasum": ""
             },
             "require": {
@@ -524,7 +681,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "http://symfony.com",
-            "time": "2014-12-16 20:28:45"
+            "time": "2014-12-20 16:07:09"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -585,18 +742,65 @@
             "time": "2014-12-16 20:28:45"
         },
         {
+            "name": "symfony/filesystem",
+            "version": "2.7.x-dev",
+            "target-dir": "Symfony/Component/Filesystem",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Filesystem.git",
+                "reference": "1ff6caf45e7c5aac036b1536a914afbf4b8c6066"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/1ff6caf45e7c5aac036b1536a914afbf4b8c6066",
+                "reference": "1ff6caf45e7c5aac036b1536a914afbf4b8c6066",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Filesystem\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Symfony Filesystem Component",
+            "homepage": "http://symfony.com",
+            "time": "2014-12-12 16:23:01"
+        },
+        {
             "name": "symfony/http-foundation",
             "version": "2.7.x-dev",
             "target-dir": "Symfony/Component/HttpFoundation",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "af0647ebde5bc78b20581b50367c93b3472518ca"
+                "reference": "56cc534d8d92afe9e9e585b89a0f9a3ebd28f924"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/af0647ebde5bc78b20581b50367c93b3472518ca",
-                "reference": "af0647ebde5bc78b20581b50367c93b3472518ca",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/56cc534d8d92afe9e9e585b89a0f9a3ebd28f924",
+                "reference": "56cc534d8d92afe9e9e585b89a0f9a3ebd28f924",
                 "shasum": ""
             },
             "require": {
@@ -635,7 +839,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "http://symfony.com",
-            "time": "2014-12-13 08:38:56"
+            "time": "2014-12-20 16:07:09"
         },
         {
             "name": "symfony/http-kernel",
@@ -644,12 +848,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "89bf1015922d2384c7bdc4faa73263153514ef32"
+                "reference": "35ebc604b909067ac02c4782d015389ce8dc4aef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/89bf1015922d2384c7bdc4faa73263153514ef32",
-                "reference": "89bf1015922d2384c7bdc4faa73263153514ef32",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/35ebc604b909067ac02c4782d015389ce8dc4aef",
+                "reference": "35ebc604b909067ac02c4782d015389ce8dc4aef",
                 "shasum": ""
             },
             "require": {
@@ -712,7 +916,54 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "http://symfony.com",
-            "time": "2014-12-16 20:28:45"
+            "time": "2014-12-20 16:07:09"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "2.7.x-dev",
+            "target-dir": "Symfony/Component/Yaml",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Yaml.git",
+                "reference": "b9c19ce1bd9a51d3f42665973088f2e2b82db240"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/b9c19ce1bd9a51d3f42665973088f2e2b82db240",
+                "reference": "b9c19ce1bd9a51d3f42665973088f2e2b82db240",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Yaml\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "http://symfony.com",
+            "time": "2014-12-09 17:32:32"
         },
         {
             "name": "true/punycode",
@@ -768,8 +1019,7 @@
     "stability-flags": {
         "sqrt-pro/kernel": 20,
         "sqrt-pro/db": 20,
-        "sqrt-pro/form": 20,
-        "symfony/console": 20
+        "sqrt-pro/form": 20
     },
     "prefer-stable": false,
     "platform": {

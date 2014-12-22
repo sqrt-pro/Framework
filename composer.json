@@ -9,7 +9,7 @@
         "sqrt-pro/kernel": "dev-master",
         "sqrt-pro/db": "dev-master",
         "sqrt-pro/form": "dev-master",
-        "symfony/console": "dev-master"
+        "symfony/console": "~2.6.0"
     },
     "autoload":{
         "psr-0":{

@@ -8,42 +8,48 @@ class defaultController extends Controller
   /** Главная страница */
   function indexAction()
   {
+    $users = $this->db()->users()->find();
+
     return $this->layout()
       ->setTitle('SQRT Framework')
       ->setHeader('Главная страница')
       ->setKeywords('META-ключевые слова')
       ->setDescription('META-описание страницы')
-      ->setContent($this->render('welcome', array('name' => 'Мир')))
+      ->setContent($this->render('welcome', array('name' => 'Мир', 'users' => $users)))
       ->render();
   }
 
   /** Пример страницы с формой */
   function formAction()
   {
-    $f = new \Form\Dummy($this->getRequest(), 'dummy');
+    $u = false;
+    if ($id = $this->getUrl()->getId()) {
+      if (!$u = $this->db()->users()->findOne($id)) {
+        $this->notFound('Пользователь не найден');
+      }
+    }
+
+    $p = $this->layout()->setTitle('Пример работы формы');
+    $f = new \Form\Dummy($this->getRequest(), $this->db(), 'dummy');
+
+    if ($u) {
+      $f->setUser($u);
+      $p->setTitle('Редактирование пользователя');
+    }
 
     if ($f->validate()) {
       $this->notice('Успешно сохранено', true);
+
+      if (!$u) {
+        return $this->redirect('/form/id:' . $f->getUser()->getId() . '/');
+      }
     }
 
     if ($err = $f->getErrors('<br />')) {
       $this->notice($err, false);
     }
 
-    return $this->layout()
-      ->setTitle('Пример работы формы')
-      ->setContent($this->renderForm($f, 'Сохранить'))
-      ->render();
-  }
-
-  /** Добавляем всплывающее сообщение */
-  function noticeAction()
-  {
-    $ok = $this->getUrl()->hasParameter('success');
-
-    $this->notice($ok ? 'Все хорошо' : 'Печалька', true);
-
-    return $this->back();
+    return $p->setContent($this->renderForm($f, 'Сохранить'));
   }
 
   /** Отображение пропущенных Exception. Отображается через подзапрос */

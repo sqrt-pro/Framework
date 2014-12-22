@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+<?php
+
+require realpath(__DIR__ . '/../inc/init.php');
+
+use Symfony\Component\Console\Application;
+
+$app = new Application();
+$dir = new RecursiveDirectoryIterator(DIR_TASK, FilesystemIterator::SKIP_DOTS);
+$it = new RecursiveIteratorIterator($dir);
+$tasks = false;
+
+while($it->valid()) {
+  if (!$it->isDot() && !$it->isDir()) {
+    $cmd = 'Task\\' . $it->getSubPath() . '\\' . $it->getBasename('.php');
+    if (class_exists($cmd)) {
+      $app->add(new $cmd);
+    }
+  }
+
+  $it->next();
+}
+
+$app->run();

@@ -15,7 +15,15 @@ define ('DIR_TMPL', DIR_ROOT . '/tmpl');
 /** Папка с тестами */
 define ('DIR_TEST', DIR_ROOT . '/tests');
 /** Папка с консольными командами */
-define ('DIR_CMD', DIR_ROOT . '/cmd');
+define ('DIR_TASK', DIR_APP . '/Task');
+/** Папка со схемами */
+define ('DIR_SCHEMA', DIR_APP . '/Schema');
+/** Папка с объектами модели */
+define ('DIR_ORM', DIR_APP . '/ORM');
+/** Папка с объектами коллекций */
+define ('DIR_COLLECTION', DIR_APP . '/Collection');
+/** Папка с миграциями */
+define('DIR_MIGRATION', DIR_ROOT . '/migrations');
 /** Папка с временными файлами и кешем */
 define ('DIR_TEMP', DIR_ROOT . '/temp');
 /** Путь к изображениям на сайте - /files */

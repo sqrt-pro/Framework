@@ -9,6 +9,9 @@ use Symfony\Component\HttpFoundation\Request;
 
 class Controller extends \SQRT\Controller
 {
+  /** @var Manager */
+  protected $manager;
+
   function __construct(Request $request, \SQRT\URL $url = null)
   {
     parent::__construct($request, $url);
@@ -19,6 +22,16 @@ class Controller extends \SQRT\Controller
     $engine->loadExtension(new Asset(DIR_WEB, true));
     $engine->loadExtension(new Notice($this->getSession()->getFlashBag()));
     $engine->loadExtension(new URL($this->getUrl()));
+  }
+
+  /** @return Manager */
+  public function db()
+  {
+    if (is_null($this->manager)) {
+      $this->manager = new Manager();
+    }
+
+    return $this->manager;
   }
 
   /** Отрисовка формы */
