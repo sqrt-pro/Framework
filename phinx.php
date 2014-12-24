@@ -7,7 +7,7 @@ return array(
     'migrations' => DIR_MIGRATION
   ),
   'environments' => array(
-    'default_migration_table' => 'phinxlog',
+    'default_migration_table' => PREFIX . 'phinxlog',
     'default_database'        => 'development',
     'development'             => array(
       'adapter' => 'mysql',

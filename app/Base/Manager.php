@@ -9,10 +9,13 @@ class Manager extends \SQRT\DB\Manager
   {
     $this->addConnection(DB_HOST, DB_USER, DB_PASS, DB_NAME);
     $this->setPrefix(PREFIX);
+
+    $this->setCollectionClass('Users', '\Collection\Users');
   }
 
+  /** @return \Collection\Users */
   public function users()
   {
-    return new \Collection\Users($this);
+    return $this->getCollection('Users');
   }
 }

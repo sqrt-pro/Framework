@@ -20,21 +20,24 @@ class Manager extends Command
 
   protected function execute(InputInterface $input, OutputInterface $output)
   {
-    $arr = array();
-    $names = array();
+    $arr         = array();
+    $names       = array();
+    $collections = false;
 
     if (is_dir(DIR_COLLECTION)) {
       $it = new \FilesystemIterator(DIR_COLLECTION, \FilesystemIterator::SKIP_DOTS);
-      while($it->valid()) {
+      while ($it->valid()) {
         if (!$it->isDot() && !$it->isDir()) {
           $nm = $it->getBasename('.php');
-          $cl = 'Collection\\' . $nm;
+          $cl = '\\Collection\\' . $nm;
           if (class_exists($cl)) {
             $names[] = $nm;
-            $arr[] = "  public function " . StaticStringy::camelize($nm) . "()\n"
+            $arr[]   = "  /** @return {$cl} */\n"
+              . "  public function " . StaticStringy::camelize($nm) . "()\n"
               . "  {\n"
-              . "    return new \\{$cl}(\$this);\n"
+              . "    return \$this->getCollection('{$nm}');\n"
               . "  }";
+            $collections .= "    \$this->setCollectionClass('{$nm}', '{$cl}');\n";
           }
         }
 
@@ -49,6 +52,7 @@ class Manager extends Command
       . "  {\n"
       . "    \$this->addConnection(DB_HOST, DB_USER, DB_PASS, DB_NAME);\n"
       . "    \$this->setPrefix(PREFIX);\n"
+      . ($collections ? "\n" . $collections : '')
       . "  }\n\n"
       . join("\n\n", $arr) . "\n"
       . "}";
