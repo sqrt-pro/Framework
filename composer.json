@@ -8,13 +8,12 @@
         "php": ">=5.3.0",
         "sqrt-pro/kernel": "dev-master",
         "sqrt-pro/db": "dev-master",
-        "sqrt-pro/form": "dev-master",
-        "symfony/console": "~2.6.0"
+        "sqrt-pro/navigator": "dev-master",
+        "sqrt-pro/form": "dev-master"
     },
     "autoload":{
         "psr-0":{
-            "":"app",
-            "Task":"cmd"
+            "":"app"
         }
     },
     "config":{

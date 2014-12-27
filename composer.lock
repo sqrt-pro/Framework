@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e69e64ff3e5f5752b76a075301cd5b7b",
+    "hash": "a7ac7ebb0ef80378656f2c73cd3fbe99",
     "packages": [
         {
             "name": "danielstjules/stringy",
@@ -216,12 +216,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sqrt-pro/DB.git",
-                "reference": "6bae70a103deefe417faddcf094ad1dbd2c8eba5"
+                "reference": "3ef586b8d56fa67b371e5c1a0ae75764429d5024"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sqrt-pro/DB/zipball/6bae70a103deefe417faddcf094ad1dbd2c8eba5",
-                "reference": "6bae70a103deefe417faddcf094ad1dbd2c8eba5",
+                "url": "https://api.github.com/repos/sqrt-pro/DB/zipball/3ef586b8d56fa67b371e5c1a0ae75764429d5024",
+                "reference": "3ef586b8d56fa67b371e5c1a0ae75764429d5024",
                 "shasum": ""
             },
             "require": {
@@ -246,7 +246,7 @@
             ],
             "description": "DB is part of SQRT Framework",
             "homepage": "http://fw.sqrt.pro",
-            "time": "2014-12-24 14:51:00"
+            "time": "2014-12-25 11:48:07"
         },
         {
             "name": "sqrt-pro/exception",
@@ -285,19 +285,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sqrt-pro/Form.git",
-                "reference": "f38d4e1e1fddafd7f31103b03b7b2982a8040f84"
+                "reference": "b1b3e317057f5740a3b163f4e74322502fd14dfd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sqrt-pro/Form/zipball/f38d4e1e1fddafd7f31103b03b7b2982a8040f84",
-                "reference": "f38d4e1e1fddafd7f31103b03b7b2982a8040f84",
+                "url": "https://api.github.com/repos/sqrt-pro/Form/zipball/b1b3e317057f5740a3b163f4e74322502fd14dfd",
+                "reference": "b1b3e317057f5740a3b163f4e74322502fd14dfd",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0",
                 "sqrt-pro/helpers": "dev-master",
                 "sqrt-pro/tag": "dev-master",
-                "symfony/http-kernel": "2.*"
+                "symfony/http-kernel": "~2.6"
             },
             "type": "library",
             "autoload": {
@@ -311,7 +311,7 @@
             ],
             "description": "Form is part of SQRT Framework",
             "homepage": "http://fw.sqrt.pro",
-            "time": "2014-12-16 13:11:03"
+            "time": "2014-12-27 05:56:22"
         },
         {
             "name": "sqrt-pro/helpers",
@@ -390,19 +390,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sqrt-pro/Kernel.git",
-                "reference": "553b2e151a8f7f4b9576a60a003c9f1c29bee263"
+                "reference": "ee925620613eed42e472bff23c979299baed136b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sqrt-pro/Kernel/zipball/553b2e151a8f7f4b9576a60a003c9f1c29bee263",
-                "reference": "553b2e151a8f7f4b9576a60a003c9f1c29bee263",
+                "url": "https://api.github.com/repos/sqrt-pro/Kernel/zipball/ee925620613eed42e472bff23c979299baed136b",
+                "reference": "ee925620613eed42e472bff23c979299baed136b",
                 "shasum": ""
             },
             "require": {
-                "league/plates": "~3.0@dev",
+                "league/plates": "~3.0",
                 "php": ">=5.3.0",
                 "sqrt-pro/url": "dev-master",
-                "symfony/http-kernel": "2.*"
+                "symfony/http-kernel": "~2.6"
             },
             "type": "library",
             "autoload": {
@@ -416,7 +416,41 @@
             ],
             "description": "Kernel is part of SQRT Framework",
             "homepage": "http://fw.sqrt.pro",
-            "time": "2014-12-17 14:53:38"
+            "time": "2014-12-27 05:48:02"
+        },
+        {
+            "name": "sqrt-pro/navigator",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sqrt-pro/Navigator.git",
+                "reference": "302e9c699ae36643b10cff02eb6c12eba622d05b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sqrt-pro/Navigator/zipball/302e9c699ae36643b10cff02eb6c12eba622d05b",
+                "reference": "302e9c699ae36643b10cff02eb6c12eba622d05b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "sqrt-pro/db": "dev-master",
+                "sqrt-pro/url": "dev-master",
+                "symfony/http-kernel": "~2.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "SQRT": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Navigator is part of SQRT Framework",
+            "homepage": "http://fw.sqrt.pro",
+            "time": "2014-12-27 06:11:14"
         },
         {
             "name": "sqrt-pro/query-builder",
@@ -424,12 +458,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sqrt-pro/QueryBuilder.git",
-                "reference": "cf433d32cc6c04821827f49dfd4eb3be790d9509"
+                "reference": "8e1f1738e1268d28352110163eef680ae58f16b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sqrt-pro/QueryBuilder/zipball/cf433d32cc6c04821827f49dfd4eb3be790d9509",
-                "reference": "cf433d32cc6c04821827f49dfd4eb3be790d9509",
+                "url": "https://api.github.com/repos/sqrt-pro/QueryBuilder/zipball/8e1f1738e1268d28352110163eef680ae58f16b8",
+                "reference": "8e1f1738e1268d28352110163eef680ae58f16b8",
                 "shasum": ""
             },
             "require": {
@@ -447,7 +481,7 @@
             ],
             "description": "SQL Query Builder is a part of SQRT Framework",
             "homepage": "http://fw.sqrt.pro",
-            "time": "2014-12-18 15:38:35"
+            "time": "2014-12-26 17:17:32"
         },
         {
             "name": "sqrt-pro/tag",
@@ -455,12 +489,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sqrt-pro/Tag.git",
-                "reference": "b21168bdb83bf8f4b9303a1f4c0c068bff6f2910"
+                "reference": "e8e026075563bae12ab6a68a1079225b69e20aaa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sqrt-pro/Tag/zipball/b21168bdb83bf8f4b9303a1f4c0c068bff6f2910",
-                "reference": "b21168bdb83bf8f4b9303a1f4c0c068bff6f2910",
+                "url": "https://api.github.com/repos/sqrt-pro/Tag/zipball/e8e026075563bae12ab6a68a1079225b69e20aaa",
+                "reference": "e8e026075563bae12ab6a68a1079225b69e20aaa",
                 "shasum": ""
             },
             "require": {
@@ -478,7 +512,7 @@
             ],
             "description": "SQRT.pro Tag is part of SQRT Framework",
             "homepage": "http://fw.sqrt.pro",
-            "time": "2014-12-07 15:23:05"
+            "time": "2014-12-26 13:09:32"
         },
         {
             "name": "sqrt-pro/url",
@@ -790,12 +824,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Filesystem.git",
-                "reference": "0741f3048da4547262344daba0df0211d7d7b64c"
+                "reference": "b394b18ed68d0ec3c87ae8f5f4d80c29d80b3dd8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/0741f3048da4547262344daba0df0211d7d7b64c",
-                "reference": "0741f3048da4547262344daba0df0211d7d7b64c",
+                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/b394b18ed68d0ec3c87ae8f5f4d80c29d80b3dd8",
+                "reference": "b394b18ed68d0ec3c87ae8f5f4d80c29d80b3dd8",
                 "shasum": ""
             },
             "require": {
@@ -828,7 +862,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "http://symfony.com",
-            "time": "2014-12-22 16:45:18"
+            "time": "2014-12-25 23:30:25"
         },
         {
             "name": "symfony/http-foundation",
@@ -837,12 +871,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "75aa9d57bb6377fa89ad40014105ae9bdee28999"
+                "reference": "e5489e2a1f5ae2b52b8f6b48688d7d1d8f28cfe2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/75aa9d57bb6377fa89ad40014105ae9bdee28999",
-                "reference": "75aa9d57bb6377fa89ad40014105ae9bdee28999",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/e5489e2a1f5ae2b52b8f6b48688d7d1d8f28cfe2",
+                "reference": "e5489e2a1f5ae2b52b8f6b48688d7d1d8f28cfe2",
                 "shasum": ""
             },
             "require": {
@@ -881,7 +915,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "http://symfony.com",
-            "time": "2014-12-23 17:36:18"
+            "time": "2014-12-26 10:31:34"
         },
         {
             "name": "symfony/http-kernel",
@@ -890,19 +924,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "bd9f845c467e55941c45de2765190d3bff96c3e9"
+                "reference": "21a23c2763049e60ec2f13882ec578b8f618f9c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/bd9f845c467e55941c45de2765190d3bff96c3e9",
-                "reference": "bd9f845c467e55941c45de2765190d3bff96c3e9",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/21a23c2763049e60ec2f13882ec578b8f618f9c4",
+                "reference": "21a23c2763049e60ec2f13882ec578b8f618f9c4",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
                 "psr/log": "~1.0",
                 "symfony/debug": "~2.6",
-                "symfony/event-dispatcher": "2.5.*,>2.5.8|~2.6,>2.6.1",
+                "symfony/event-dispatcher": "~2.5.9|~2.6,>=2.6.2",
                 "symfony/http-foundation": "~2.5,>=2.5.4"
             },
             "require-dev": {
@@ -958,7 +992,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "http://symfony.com",
-            "time": "2014-12-23 17:36:18"
+            "time": "2014-12-25 23:30:25"
         },
         {
             "name": "symfony/yaml",
@@ -1061,6 +1095,7 @@
     "stability-flags": {
         "sqrt-pro/kernel": 20,
         "sqrt-pro/db": 20,
+        "sqrt-pro/navigator": 20,
         "sqrt-pro/form": 20
     },
     "prefer-stable": false,
