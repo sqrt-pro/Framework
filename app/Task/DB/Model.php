@@ -68,7 +68,7 @@ class Model extends Command
         mkdir(DIR_ORM);
       }
 
-      $class = $schema->getItemClass();
+      $class = $schema->getItemClass(false);
       $file  = DIR_ORM . DIRECTORY_SEPARATOR . $class . '.php';
       file_put_contents($file, $schema->makeItem());
       $output->writeln(sprintf('<info>ORM\\%s создан: %s</info>', $class, $file));

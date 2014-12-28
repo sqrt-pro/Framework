@@ -1,6 +1,6 @@
 <?php
 
-define ('START_AT', time());
+define ('START_AT', microtime(true));
 define ('ENV', 'web');
 
 require_once __DIR__ . '/../inc/init.php';
