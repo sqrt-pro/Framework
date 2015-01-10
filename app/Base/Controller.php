@@ -24,8 +24,18 @@ class Controller extends \SQRT\Controller
     $engine->loadExtension(new URL($this->getUrl()));
   }
 
-  /** @return Manager */
+  /**
+   * Альяс для getManager
+   *
+   * @return Manager
+   */
   public function db()
+  {
+    return $this->getManager();
+  }
+
+  /** @return Manager */
+  public function getManager()
   {
     if (is_null($this->manager)) {
       $this->manager = new Manager();
