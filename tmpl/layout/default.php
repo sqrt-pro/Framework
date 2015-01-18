@@ -1,15 +1,15 @@
-<?php /** @var $page \SQRT\Layout */ ?>
+<?php /** @var $layout \SQRT\Layout */ ?>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8" />
-  <?= $page->title() ?>
+  <?= $layout->title() ?>
 
-  <?= $page->keywords() ?>
+  <?= $layout->keywords() ?>
 
-  <?= $page->description('Лучший сайт на свете') ?>
+  <?= $layout->description('Лучший сайт на свете') ?>
 
-  <?php if ($arr = $page->getCSS()): ?>
+  <?php if ($arr = $layout->getCSS()): ?>
     <?php foreach ($arr as $css): ?>
       <?= $this->fetch('block/css', $css) ?>
     <?php endforeach ?>
@@ -20,7 +20,7 @@
 <body>
   <div class="wrapper">
     <!-- Заголовок -->
-    <?= $page->header('h1', 'blue') ?>
+    <?= $layout->header('h1', 'blue') ?>
 
     <!-- Пример меню -->
     <nav>
@@ -32,11 +32,11 @@
     <?= $this->notice('notice') ?>
 
     <!-- Контент страницы -->
-    <?= $page->getContent() ?>
+    <?= $layout->getContent() ?>
   </div>
 
   <!-- JS -->
-  <?php if ($arr = $page->getJS()): ?>
+  <?php if ($arr = $layout->getJS()): ?>
     <?php foreach ($arr as $js): ?>
       <?= $this->fetch('block/js', $js) ?>
     <?php endforeach ?>
