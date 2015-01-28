@@ -27,6 +27,7 @@ abstract class User extends \Base\Item
         'is_active',
         'status',
         'name',
+        'login',
         'salt',
         'password',
         'created_at',
@@ -53,7 +54,7 @@ abstract class User extends \Base\Item
   /** @return static */
   public function setIsActive($is_active)
   {
-    return $this->set('is_active', (int)$is_active);
+    return $this->set('is_active', is_null($is_active) ? null : (int)$is_active);
   }
 
   public function getStatus($default = null)
@@ -85,6 +86,17 @@ abstract class User extends \Base\Item
   public function setName($name)
   {
     return $this->set('name', $name);
+  }
+
+  public function getLogin($default = null)
+  {
+    return $this->get('login', $default);
+  }
+
+  /** @return static */
+  public function setLogin($login)
+  {
+    return $this->set('login', $login);
   }
 
   public function getSalt($default = null)

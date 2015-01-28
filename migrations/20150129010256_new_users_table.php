@@ -10,6 +10,7 @@ class NewUsersTable extends AbstractMigration
     $tbl->addColumn("is_active", "boolean", array ( 'default' => 0,));
     $tbl->addColumn("status", "string", array ( 'null' => true, 'length' => 255,));
     $tbl->addColumn("name", "string", array ( 'length' => 255, 'null' => true,));
+    $tbl->addColumn("login", "string", array ( 'length' => 255, 'null' => true,));
     $tbl->addColumn("salt", "string", array ( 'length' => 255, 'null' => true,));
     $tbl->addColumn("password", "string", array ( 'length' => 255, 'null' => true,));
     $tbl->addColumn("created_at", "timestamp", array ( 'default' => 'CURRENT_TIMESTAMP',));

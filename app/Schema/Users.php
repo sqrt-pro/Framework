@@ -16,6 +16,7 @@ class Users extends Schema
       ->addBool('is_active')
       ->addEnum('status', array('guest', 'user', 'admin'))
       ->addChar('name')
+      ->addChar('login')
       ->addChar('salt')
       ->addChar('password')
       ->addTimeCreated()
@@ -29,6 +30,7 @@ class Users extends Schema
     $u = $m->users()->make();
 
     $u->setIsActive(true);
+    $u->setLogin('admin');
     $u->setName('Admin');
     $u->setPassword('qwerty');
     $u->setStatus(\User::STATUS_ADMIN);
