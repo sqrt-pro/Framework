@@ -26,6 +26,10 @@
     <nav>
       <a href="/" <?= $this->url() == '/' ? 'class="active"' : '' ?>>Демо-страница</a>
       <a href="/form/" <?= $this->url() == '/form/' ? 'class="active"' : '' ?>>Добавить пользователя</a>
+      <a href="/protected/" <?= $this->url() == '/protected/' ? 'class="active"' : '' ?>>Закрытый раздел</a>
+      <?php if ($u = $this->user()): ?>
+        <a href="/logout/">Выход <?= $u->getName() ?> [<?= $u->getStatusName() ?>]</a>
+      <?php endif ?>
     </nav>
 
     <!-- Отрисовываем всплывающие сообщения в шаблоне notice -->

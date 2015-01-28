@@ -2,15 +2,20 @@
 
 namespace Base;
 
+use SQRT\Plates\Extension\DB;
 use SQRT\Plates\Extension\Notice;
 use SQRT\Plates\Extension\URL;
 use League\Plates\Extension\Asset;
+use SQRT\Plates\Extension\User;
 use Symfony\Component\HttpFoundation\Request;
 
 class Controller extends \SQRT\Controller
 {
   /** @var Manager */
   protected $manager;
+
+  /** @var Auth */
+  protected $auth;
 
   function __construct(Request $request, \SQRT\URL $url = null)
   {
@@ -22,6 +27,24 @@ class Controller extends \SQRT\Controller
     $engine->loadExtension(new Asset(DIR_WEB, true));
     $engine->loadExtension(new Notice($this->getSession()->getFlashBag()));
     $engine->loadExtension(new URL($this->getUrl()));
+    $engine->loadExtension(new DB($this->getManager()));
+    $engine->loadExtension(new User($this->getUser() ?: null));
+  }
+
+  /** @return Auth */
+  public function auth()
+  {
+    if (is_null($this->auth)) {
+      $this->auth = new Auth($this->getManager(), $this->getRequest());
+    }
+
+    return $this->auth;
+  }
+
+  /** @return \User */
+  public function getUser()
+  {
+    return $this->auth()->getUser();
   }
 
   /**

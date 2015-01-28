@@ -9,7 +9,8 @@
         "sqrt-pro/kernel": "dev-master",
         "sqrt-pro/db": "dev-master",
         "sqrt-pro/navigator": "dev-master",
-        "sqrt-pro/form": "dev-master"
+        "sqrt-pro/form": "dev-master",
+        "sqrt-pro/auth": "dev-master"
     },
     "autoload":{
         "psr-0":{

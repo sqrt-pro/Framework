@@ -9,14 +9,70 @@ class defaultController extends Controller
   function indexAction()
   {
     $users = $this->db()->users()->find();
+    $user  = $this->getUser();
 
     return $this->layout()
       ->setTitle('SQRT Framework')
       ->setHeader('Главная страница')
       ->setKeywords('META-ключевые слова')
       ->setDescription('META-описание страницы')
-      ->setContent($this->render('welcome', array('name' => 'Мир', 'users' => $users)))
+      ->setContent($this->render('welcome', array('name' => $user ? $user->getName() : 'Мир', 'users' => $users)))
       ->render();
+  }
+
+  /** Страница с ограниченным доступом */
+  function protectedAction()
+  {
+    if (!$u = $this->getUser()) {
+      $this->notice('Доступ запрещен', false);
+
+      return $this->redirect('/login/');
+    }
+
+    return $this->layout()
+      ->setTitle('Закрытый раздел')
+      ->setContent($this->render('protected', array('user' => $u)))
+      ->render();
+  }
+
+  /** Вход */
+  function loginAction()
+  {
+    if ($u = $this->getUser()) {
+      return $this->redirect('/protected/');
+    }
+
+    $f = new \Form\Auth($this->getRequest(), $this->getManager(), $this->auth(), 'dummy');
+
+    if ($f->validate()) {
+      $r = $this->redirect('/protected/');
+
+      if ($c = $this->auth()->getCookieForResponse()) {
+        $r->headers->setCookie($c);
+      }
+
+      return $r;
+    }
+
+    if ($err = $f->getErrors('<br />')) {
+      $this->notice($err, false);
+    }
+
+    return $this->layout()
+      ->setTitle('Авторизация')
+      ->setContent($this->renderForm($f, 'Войти'))
+      ->render();
+  }
+
+  /** Выход */
+  function logoutAction()
+  {
+    $a = $this->auth()->logout();
+    $r = $this->redirect('/');
+
+    $r->headers->clearCookie($a->getTokenVar());
+
+    return $r;
   }
 
   /** Пример страницы с формой */

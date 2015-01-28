@@ -32,6 +32,10 @@ class Dummy extends Form
     $this->addInput('name', 'Имя')
       ->setIsRequired();
 
+    $this->addInput('login', 'Логин')
+      ->addFilter(REGULAR_LOGIN)
+      ->setIsRequired();
+
     $this->addSelect('status', 'Статус', \User::GetStatusArr())
       ->setPlaceholder('Выберите')
       ->setIsRequired();
@@ -63,6 +67,7 @@ class Dummy extends Form
 
       $u->setIsActive($d['is_active']);
       $u->setName($d['name']);
+      $u->setLogin($d['login']);
       $u->setStatus($d['status']);
       if (!empty($d['password'])) {
         $u->setPassword($d['password']);

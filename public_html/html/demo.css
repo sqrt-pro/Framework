@@ -74,3 +74,8 @@ nav a.active {
     color:      white;
     background: #666666;
     }
+
+form label {
+    display: block;
+    margin: 10px 0;
+    }
