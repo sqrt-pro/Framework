@@ -40,7 +40,7 @@ class Clear extends Command
       }
     }
 
-    $db->query('DROP TABLE IF EXISTS phinxlog');
+    $db->query('DROP TABLE IF EXISTS ' . $db->getPrefix() . 'phinxlog');
 
     while($limit--) {
       /** @var $schema Schema */

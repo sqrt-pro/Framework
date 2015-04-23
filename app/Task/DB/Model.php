@@ -58,8 +58,12 @@ class Model extends Command
 
       $class = $schema->getName();
       $file  = DIR_COLLECTION . DIRECTORY_SEPARATOR . $schema->getName() . '.php';
-      file_put_contents($file, $schema->makeCollection());
-      $output->writeln(sprintf('<info>Collection\\%s создан: %s</info>', $class, $file));
+      if (!file_exists($file)) {
+        file_put_contents($file, $schema->makeCollection());
+        $output->writeln(sprintf('<info>Collection\\%s создан: %s</info>', $class, $file));
+      } else {
+        $output->writeln(sprintf('<info>Класс Collection\\%s уже существует: %s</info>', $class, $file));
+      }
     }
 
     // Базовый ORM класс
