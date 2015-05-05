@@ -10,19 +10,19 @@ class Manager extends \SQRT\DB\Manager
     $this->addConnection(DB_HOST, DB_USER, DB_PASS, DB_NAME);
     $this->setPrefix(PREFIX);
 
-    $this->setCollectionClass('Sessions', '\Collection\Sessions');
-    $this->setCollectionClass('Users', '\Collection\Users');
+    $this->setRepositoryClass('Sessions', '\Repository\Sessions');
+    $this->setRepositoryClass('Users', '\Repository\Users');
   }
 
-  /** @return \Collection\Sessions */
+  /** @return \Repository\Sessions */
   public function sessions()
   {
-    return $this->getCollection('Sessions');
+    return $this->getRepository('Sessions');
   }
 
-  /** @return \Collection\Users */
+  /** @return \Repository\Users */
   public function users()
   {
-    return $this->getCollection('Users');
+    return $this->getRepository('Users');
   }
 }

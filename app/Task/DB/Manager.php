@@ -15,7 +15,7 @@ class Manager extends Command
   {
     $this
       ->setName('db:manager')
-      ->setDescription('Обновляет список коллекций приложения в менеджере БД');
+      ->setDescription('Обновляет список репозиториев приложения в менеджере БД');
   }
 
   protected function execute(InputInterface $input, OutputInterface $output)
@@ -24,20 +24,20 @@ class Manager extends Command
     $names       = array();
     $collections = false;
 
-    if (is_dir(DIR_COLLECTION)) {
-      $it = new \FilesystemIterator(DIR_COLLECTION, \FilesystemIterator::SKIP_DOTS);
+    if (is_dir(DIR_REPOSITORY)) {
+      $it = new \FilesystemIterator(DIR_REPOSITORY, \FilesystemIterator::SKIP_DOTS);
       while ($it->valid()) {
         if (!$it->isDot() && !$it->isDir()) {
           $nm = $it->getBasename('.php');
-          $cl = '\\Collection\\' . $nm;
+          $cl = '\\Repository\\' . $nm;
           if (class_exists($cl)) {
             $names[] = $nm;
             $arr[]   = "  /** @return {$cl} */\n"
               . "  public function " . StaticStringy::camelize($nm) . "()\n"
               . "  {\n"
-              . "    return \$this->getCollection('{$nm}');\n"
+              . "    return \$this->getRepository('{$nm}');\n"
               . "  }";
-            $collections .= "    \$this->setCollectionClass('{$nm}', '{$cl}');\n";
+            $collections .= "    \$this->setRepositoryClass('{$nm}', '{$cl}');\n";
           }
         }
 

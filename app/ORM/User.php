@@ -77,6 +77,21 @@ abstract class User extends \Base\Item
     return $this->set('status', $status);
   }
 
+  public function isStatusGuest()
+  {
+    return $this->getStatus() == static::STATUS_GUEST;
+  }
+
+  public function isStatusUser()
+  {
+    return $this->getStatus() == static::STATUS_USER;
+  }
+
+  public function isStatusAdmin()
+  {
+    return $this->getStatus() == static::STATUS_ADMIN;
+  }
+
   public function getName($default = null)
   {
     return $this->get('name', $default);

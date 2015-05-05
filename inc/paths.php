@@ -21,7 +21,7 @@ define ('DIR_SCHEMA', DIR_APP . '/Schema');
 /** Папка с объектами модели */
 define ('DIR_ORM', DIR_APP . '/ORM');
 /** Папка с объектами коллекций */
-define ('DIR_COLLECTION', DIR_APP . '/Collection');
+define ('DIR_REPOSITORY', DIR_APP . '/Repository');
 /** Папка с миграциями */
 define('DIR_MIGRATION', DIR_ROOT . '/migrations');
 /** Папка с временными файлами и кешем */

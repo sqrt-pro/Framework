@@ -33,8 +33,6 @@ class Schema extends Command
       . "{\n"
       . "  protected function init()\n"
       . "  {\n"
-      . "    \$this->setTable('" . StaticStringy::underscored($name) . "');\n"
-      . "    \$this->setName('{$name}');\n"
       . "    \$this\n"
       . "      ->addId()\n"
       . "      ->addChar('name');\n"

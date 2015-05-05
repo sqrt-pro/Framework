@@ -52,17 +52,17 @@ class Model extends Command
 
     // Коллекция
     if (empty($skip_coll)) {
-      if (!is_dir(DIR_COLLECTION)) {
-        mkdir(DIR_COLLECTION);
+      if (!is_dir(DIR_REPOSITORY)) {
+        mkdir(DIR_REPOSITORY);
       }
 
       $class = $schema->getName();
-      $file  = DIR_COLLECTION . DIRECTORY_SEPARATOR . $schema->getName() . '.php';
+      $file  = DIR_REPOSITORY . DIRECTORY_SEPARATOR . $schema->getName() . '.php';
       if (!file_exists($file)) {
-        file_put_contents($file, $schema->makeCollection());
-        $output->writeln(sprintf('<info>Collection\\%s создан: %s</info>', $class, $file));
+        file_put_contents($file, $schema->makeRepository());
+        $output->writeln(sprintf('<info>Repository\\%s создан: %s</info>', $class, $file));
       } else {
-        $output->writeln(sprintf('<info>Класс Collection\\%s уже существует: %s</info>', $class, $file));
+        $output->writeln(sprintf('<info>Класс Repository\\%s уже существует: %s</info>', $class, $file));
       }
     }
 
