@@ -2,7 +2,6 @@
 
 namespace Task\DB;
 
-use SQRT\DB\Schema;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -43,7 +42,7 @@ class Clear extends Command
     $db->query('DROP TABLE IF EXISTS ' . $db->getPrefix() . 'phinxlog');
 
     while($limit--) {
-      /** @var $schema Schema */
+      /** @var $schema \SQRT\DB\Schema */
       foreach ($arr as $nm => $schema) {
         try {
           $db->query('DROP TABLE IF EXISTS ' . $db->getPrefix() . $schema->getTable());

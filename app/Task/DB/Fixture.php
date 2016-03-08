@@ -2,7 +2,6 @@
 
 namespace Task\DB;
 
-use SQRT\DB\Schema;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -31,7 +30,7 @@ class Fixture extends Command
       return;
     }
 
-    /** @var $schema Schema */
+    /** @var $schema \SQRT\DB\Schema */
     $schema = new $schema_name($db);
 
     try {
