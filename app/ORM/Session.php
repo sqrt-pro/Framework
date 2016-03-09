@@ -3,6 +3,7 @@
 namespace ORM;
 
 use SQRT\DB\Exception;
+use SQRT\DB\Collection;
 
 /** Этот файл сгенерирован автоматически по схеме Sessions */
 abstract class Session extends \Base\Item
@@ -67,9 +68,10 @@ abstract class Session extends \Base\Item
     return $this->set('token', $token);
   }
 
-  public function getExpiresAt($default = false, $format = null)
+  /** @return \SQRT\Helpers\DateTime|bool */
+  public function getExpiresAt($format = null, $default = false)
   {
-    return $this->getAsDate('expires_at', $default, $format);
+    return $this->getAsDate('expires_at', $format, $default);
   }
 
   /** @return static */
@@ -78,9 +80,10 @@ abstract class Session extends \Base\Item
     return $this->setAsDate('expires_at', $expires_at);
   }
 
-  public function getCreatedAt($default = false, $format = null)
+  /** @return \SQRT\Helpers\DateTime|bool */
+  public function getCreatedAt($format = null, $default = false)
   {
-    return $this->getAsDate('created_at', $default, $format);
+    return $this->getAsDate('created_at', $format, $default);
   }
 
   /** @return static */

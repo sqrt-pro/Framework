@@ -9,6 +9,6 @@
 <?php if ($users): ?>
   <p>Всего пользователей: <b><?= $users->count() ?></b></p>
   <?php foreach ($users as $user): ?>
-    <p><?= $user->getId() ?>: <a href="/form/id:<?= $user->getId() ?>/"><?= $user->getName() ?></a></p>
+    <p><?= $user->getId() ?>: <a href="/form/<?= $user->getId() ?>"><?= $user->getName() ?></a></p>
   <?php endforeach ?>
 <?php endif ?>

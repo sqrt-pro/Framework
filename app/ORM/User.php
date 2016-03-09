@@ -3,6 +3,7 @@
 namespace ORM;
 
 use SQRT\DB\Exception;
+use SQRT\DB\Collection;
 
 /** Этот файл сгенерирован автоматически по схеме Users */
 abstract class User extends \Base\Item
@@ -136,9 +137,10 @@ abstract class User extends \Base\Item
     return $this->set('password', $password);
   }
 
-  public function getCreatedAt($default = false, $format = null)
+  /** @return \SQRT\Helpers\DateTime|bool */
+  public function getCreatedAt($format = null, $default = false)
   {
-    return $this->getAsDate('created_at', $default, $format);
+    return $this->getAsDate('created_at', $format, $default);
   }
 
   /** @return static */

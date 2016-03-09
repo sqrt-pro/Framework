@@ -5,32 +5,33 @@ define ('ENV', 'web');
 
 require_once __DIR__ . '/../inc/init.php';
 
-use SQRT\EventListener;
-use SQRT\ControllerResolver;
-use Symfony\Component\HttpKernel\HttpKernel;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\EventDispatcher\EventDispatcher;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
-// Создаем объект Request
-$request = Request::createFromGlobals();
+try {
 
-// Диспетчер событий
-$dispatcher = new EventDispatcher();
+  $container = new \Container();
+  $router    = new \RouteCollection($container);
+  $request   = $container->get(Request::class);
+  $method    = strtoupper($request->get('_method', $request->getMethod()));
+  $response  = $router->getDispatcher()->dispatch(DEVMODE ? $method : $request->getMethod(), $request->getPathInfo());
 
-// Добавляем слушателя событий системы
-$dispatcher->addSubscriber(new EventListener());
+} catch (\Exception $e) {
 
-// Класс, находящий контроллер по URL
-$resolver = new ControllerResolver(DIR_CTRL);
+  $headers = [];
+  $code    = JsonResponse::HTTP_INTERNAL_SERVER_ERROR;
+  $title   = DEVMODE ? $e->getMessage() : 'Внутренняя ошибка сервера';
+  $slug    = 'unknown';
 
-// Ядро преобразует запрос в ответ
-$kernel = new HttpKernel($dispatcher, $resolver);
+  if ($e instanceof League\Route\Http\Exception) {
+    $code    = $e->getStatusCode();
+    $headers = $e->getHeaders();
+    $title   = $e->getMessage();
+  }
 
-// Обрабатываем запрос
-$response = $kernel->handle($request);
+  $response = JsonResponse::create(['errors' => [['title' => $title, 'code' => $slug]]], $code, $headers);
+}
 
-// Возвращаем результат
 $response->send();
 
-// Выполняем отложенные задачи, если они есть
-$kernel->terminate($request, $response);
+//echo microtime(true) - START_AT;

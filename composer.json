@@ -5,12 +5,13 @@
     "type": "library",
     "license": "MIT",
     "require": {
-        "php": ">=5.3.0",
+        "php": ">=5.5.0",
         "sqrt-pro/kernel": "dev-master",
-        "sqrt-pro/db": "dev-master",
-        "sqrt-pro/navigator": "dev-master",
-        "sqrt-pro/form": "dev-master",
-        "sqrt-pro/auth": "dev-master"
+        "sqrt-pro/db": "~0.1",
+        "sqrt-pro/navigator": "~0.1",
+        "sqrt-pro/form": "~0.1",
+        "sqrt-pro/auth": "dev-master",
+        "league/route": "~1.2"
     },
     "autoload":{
         "psr-0":{

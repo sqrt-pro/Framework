@@ -8,8 +8,6 @@ define('DIR_INC', __DIR__);
 define ('DIR_APP', DIR_ROOT . '/app');
 /** Папка публичного доступа */
 define ('DIR_WEB', DIR_ROOT . '/public_html');
-/** Папка с контроллерами */
-define ('DIR_CTRL', DIR_ROOT . '/ctrl');
 /** Папка с шаблонами */
 define ('DIR_TMPL', DIR_ROOT . '/tmpl');
 /** Папка с тестами */
