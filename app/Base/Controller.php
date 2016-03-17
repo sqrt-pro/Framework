@@ -2,6 +2,7 @@
 
 namespace Base;
 
+use League\Plates\Engine;
 use SQRT\Plates\Extension\DB;
 use SQRT\Plates\Extension\Notice;
 use SQRT\Plates\Extension\URL;
@@ -17,18 +18,11 @@ class Controller extends \SQRT\Controller
   /** @var Auth */
   protected $auth;
 
-  function __construct(Request $request, \SQRT\URL $url = null)
+  function __construct(Request $request, Engine $engine, \SQRT\URL $url = null)
   {
-    parent::__construct($request, $url);
+    $this->engine = $engine;
 
-    // Настройка шаблонизатора
-    $engine = $this->getTemplatesEngine();
-    $engine->setDirectory(DIR_TMPL);
-    $engine->loadExtension(new Asset(DIR_WEB, true));
-    $engine->loadExtension(new Notice($this->getSession()->getFlashBag()));
-    $engine->loadExtension(new URL($this->getUrl()));
-    $engine->loadExtension(new DB($this->getManager()));
-    $engine->loadExtension(new User($this->getUser() ?: null));
+    parent::__construct($request, $url);
   }
 
   /** @return Auth */

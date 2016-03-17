@@ -2,7 +2,9 @@
 
 namespace Base;
 
+use SQRT\Layout;
 use Stringy\StaticStringy;
+use League\Plates\Template\Template;
 use League\Route\Strategy\AbstractStrategy;
 use League\Route\Strategy\StrategyInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -35,6 +37,10 @@ class RouteStrategy extends AbstractStrategy implements StrategyInterface
   {
     if ($response instanceof Response) {
       return $response;
+    }
+
+    if ($response instanceof Layout || $response instanceof Template) {
+      $response = $response->render();
     }
 
     if (is_array($response)) {
