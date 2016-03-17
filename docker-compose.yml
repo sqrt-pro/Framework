@@ -1,0 +1,49 @@
+app:
+    image: debian:jessie
+    volumes:
+        - .:/app
+    command: "true"
+
+data:
+    image: debian:jessie
+    volumes:
+        - /var/lib/mysql
+    command: "true"
+
+nginx:
+    build: ./docker/nginx/
+    ports:
+        - 80:80
+    links:
+        - php
+    volumes_from:
+        - app
+
+php:
+    build: ./docker/php/
+    expose:
+        - 9000
+    links:
+        - mysql
+    volumes_from:
+        - app
+
+mysql:
+    build: ./docker/mysql/
+    volumes_from:
+        - data
+    environment:
+        MYSQL_ROOT_PASSWORD: qwerty
+        MYSQL_DATABASE: test
+        MYSQL_USER: test
+        MYSQL_PASSWORD: test
+
+
+phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+        - 8080:80
+    links:
+        - mysql
+    environment:
+        PMA_HOST: mysql
