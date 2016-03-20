@@ -4,6 +4,15 @@ app:
         - .:/app
     command: "true"
 
+toolbox:
+    build: ./docker/toolbox/
+    volumes_from:
+        - app
+    links:
+        - mysql
+        - nginx
+        - mailcatcher
+
 data:
     image: debian:jessie
     volumes:
@@ -46,6 +55,8 @@ phpmyadmin:
         - mysql
     environment:
         PMA_HOST: mysql
+        PMA_USER: test
+        PMA_PASSWORD: test
 
 mailcatcher:
     image: schickling/mailcatcher

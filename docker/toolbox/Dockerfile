@@ -1,4 +1,4 @@
-FROM php:5.6-fpm
+FROM php:5.6-cli
 
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
@@ -14,6 +14,11 @@ RUN apt-get update && apt-get install -y \
         pdo_mysql \
         mbstring
 
+# Install composer
+RUN curl -sS# https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
+
 COPY ./config /usr/local/etc/php/conf.d
 
 WORKDIR /app
+
+ENTRYPOINT ["/bin/bash"]
