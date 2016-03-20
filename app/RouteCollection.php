@@ -1,6 +1,6 @@
 <?php
 
-class RouteCollection extends \Base\RouteCollection
+class RouteCollection extends \SQRT\RouteCollection
 {
   protected function init()
   {

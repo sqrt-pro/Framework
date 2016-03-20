@@ -2,15 +2,16 @@
 
 namespace Controller;
 
-use Base\Controller;
 use Form\Dummy;
+use Base\Controller;
+use Repository\Users;
 
 class Welcome extends Controller
 {
   /** Главная страница */
-  function indexAction()
+  function indexAction(Users $repo)
   {
-    $users = $this->db()->users()->find();
+    $users = $repo->find();
     $user  = $this->getUser();
 
     return $this->layout()

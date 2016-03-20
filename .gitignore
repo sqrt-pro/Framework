@@ -1,4 +1,7 @@
 .idea
 vendor
 bin/phinx
+bin/codecept
+bin/phpunit
 composer.lock
+tests/_output/*

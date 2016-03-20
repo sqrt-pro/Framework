@@ -10,11 +10,11 @@
         "sqrt-pro/db": "~0.1",
         "sqrt-pro/navigator": "~0.1",
         "sqrt-pro/form": "~0.1",
-        "sqrt-pro/auth": "~0.1",
-        "league/route": "~1.2"
+        "sqrt-pro/auth": "~0.1"
     },
     "require-dev": {
         "codeception/codeception": "~2.0",
+        "captbaritone/mailcatcher-codeception-module": "~1.0",
         "flow/jsonpath": "~0.3",
         "mockery/mockery": "~1.0"
     },

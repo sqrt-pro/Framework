@@ -2,37 +2,12 @@
 
 namespace Base;
 
-use League\Plates\Engine;
-use SQRT\Plates\Extension\DB;
-use SQRT\Plates\Extension\Notice;
-use SQRT\Plates\Extension\URL;
-use League\Plates\Extension\Asset;
-use SQRT\Plates\Extension\User;
-use Symfony\Component\HttpFoundation\Request;
-
 class Controller extends \SQRT\Controller
 {
-  /** @var Manager */
-  protected $manager;
-
-  /** @var Auth */
-  protected $auth;
-
-  function __construct(Request $request, Engine $engine, \SQRT\URL $url = null)
-  {
-    $this->engine = $engine;
-
-    parent::__construct($request, $url);
-  }
-
   /** @return Auth */
   public function auth()
   {
-    if (is_null($this->auth)) {
-      $this->auth = new Auth($this->getManager(), $this->getRequest());
-    }
-
-    return $this->auth;
+    return $this->container->get(Auth::class);
   }
 
   /** @return \User */
@@ -54,11 +29,7 @@ class Controller extends \SQRT\Controller
   /** @return Manager */
   public function getManager()
   {
-    if (is_null($this->manager)) {
-      $this->manager = new Manager();
-    }
-
-    return $this->manager;
+    return $this->container->get(Manager::class);
   }
 
   /** Отрисовка формы */

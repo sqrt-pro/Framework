@@ -10,7 +10,7 @@ toolbox:
         - app
     links:
         - mysql
-        - nginx
+        - nginx:localhost
         - mailcatcher
 
 data:
