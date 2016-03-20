@@ -15,6 +15,7 @@
     <?php endforeach ?>
   <?php endif ?>
 
+  <link rel="shortcut icon" href="/html/favicon.ico" type="image/x-icon" />
 </head>
 
 <body>
