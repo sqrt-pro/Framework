@@ -38,7 +38,6 @@ mysql:
         MYSQL_USER: test
         MYSQL_PASSWORD: test
 
-
 phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
@@ -47,3 +46,8 @@ phpmyadmin:
         - mysql
     environment:
         PMA_HOST: mysql
+
+mailcatcher:
+    image: schickling/mailcatcher
+    ports:
+        - 1080:1080
