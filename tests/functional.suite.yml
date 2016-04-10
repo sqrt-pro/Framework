@@ -21,4 +21,6 @@ modules:
             url: 'http://mailcatcher'
             port: '1080'
         \SQRT\Codeception\SQRT:
-            app: tests/app.php
+            container: \Container
+            # Kernel class can be overrided
+            # kernel: \SQRT\Kernel
