@@ -34,6 +34,7 @@ php:
         - 9000
     links:
         - mysql
+        - mailcatcher
     volumes_from:
         - app
 
@@ -59,6 +60,6 @@ phpmyadmin:
         PMA_PASSWORD: test
 
 mailcatcher:
-    image: schickling/mailcatcher
+    build: ./docker/mailcatcher/
     ports:
         - 1080:1080
