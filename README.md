@@ -11,7 +11,7 @@
 
 Установка производится с помощью [Composer](https://getcomposer.org/).
 
-`php composer.phar create-project sqrt-pro/framework:dev-master path/to/install`
+`php composer.phar create-project sqrt-pro/framework:~0.2 path/to/install`
 
 ## Пояснения
 
